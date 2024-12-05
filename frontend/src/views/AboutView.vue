@@ -1,17 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { collection, query, getDocs } from 'firebase/firestore'
+import { onMounted, ref } from 'vue'
+import { db } from '@/firebase/config'
+
+import PrimeButton from 'primevue/button'
+
+const q = query(collection(db, 'tasks'))
+
+const ans = ref()
+onMounted(async () => {
+  ;(await getDocs(q)).forEach((doc) => {
+    console.log(doc.data())
+  })
+})
+</script>
 
 <template>
-  <div class="about">
-    <h1>Hello ДЖОН!!!!</h1>
-  </div>
+  <h1>Hello ДЖОН!!!!</h1>
+  <PrimeButton severity="success" label="Hello" />
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
