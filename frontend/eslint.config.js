@@ -16,4 +16,13 @@ export default [
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
   skipFormatting,
+
+  {
+    name: 'app/disable-multi-word',
+    files: ['**/*.{ts,tsx,vue}'],
+    rules: {
+      "quotes": ["error", "double"],
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 ]
