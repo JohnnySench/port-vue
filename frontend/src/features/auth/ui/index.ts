@@ -1,7 +1,3 @@
-import signUp from "./signUp.vue"
-import signIn from "./signIn.vue"
+import authDialog from "./index.vue"
 
-export {
-  signUp,
-  signIn
-}
+export { authDialog }

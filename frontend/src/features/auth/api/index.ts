@@ -1,4 +1,5 @@
-import {signUp, signIn} from "@shared/api/firebase"
+import { signUp, signIn } from "@shared/api/firebase"
+import { errorPreparing } from "../utils"
 
 export const authSignUp = async (email: string, password: string) => {
   try {
@@ -7,9 +8,8 @@ export const authSignUp = async (email: string, password: string) => {
       localStorage.setItem("user", JSON.stringify(response.data))
     }
   } catch (e) {
-
+    errorPreparing(e)
   } finally {
-
   }
 }
 
@@ -21,8 +21,6 @@ export const authSignIn = async (email: string, password: string) => {
     }
     return true
   } catch (e) {
-
   } finally {
-
   }
 }
