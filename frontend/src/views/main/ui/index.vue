@@ -8,6 +8,8 @@ const handleCallAuth = () => {
   visibleAuth.value = true
 }
 
+console.log(1)
+
 const authTabActive = shallowRef<"up" | "in">("up")
 </script>
 
