@@ -1,5 +1,6 @@
 <script setup lang="ts">
 console.log(1)
+console.log(1)
 import { ref, toRef, markRaw } from "vue"
 const props = defineProps({ value: Boolean })
 const defaultValue = toRef(() => props.value)
