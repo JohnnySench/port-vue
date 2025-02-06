@@ -1,15 +1,15 @@
-import { createApp, h } from "vue"
+import { createApp, h, type VNode } from "vue"
 import { PrimeVue, config } from "@/plugins"
 import router from "@/app/router"
 
-export const useResolvedModal = (component: any, props: any): Promise<any> => {
+export const useResolvedModal = <T, R>(component: VNode[], props: T): Promise<R> => {
   return new Promise((resolve) => {
     const dialogContainer = document.createElement("div")
     document.body.appendChild(dialogContainer)
 
     const app = createApp({
       setup() {
-        const onDestroy = (result: any) => {
+        const onDestroy = (result: R) => {
           app.unmount()
           document.body.removeChild(dialogContainer)
           resolve(result)

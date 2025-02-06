@@ -1,0 +1,8 @@
+{
+  "login": "Войти",
+  "placeholders": {
+    "email": "Почта",
+    "password": "Пароль"
+  },
+  "haveAccount": "У меня уже есть аккаунт"
+}

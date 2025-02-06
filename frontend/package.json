@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -17,14 +18,19 @@
     "@vueuse/core": "^12.0.0",
     "axios": "^1.7.9",
     "firebase": "^11.0.2",
+    "my-ui-kit": "file:../../../my-ui-kit",
     "pinia": "^2.2.6",
     "primevue": "^4.2.5",
     "swiper": "^11.1.15",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.12",
     "vue-draggable-next": "^2.2.1",
-    "vue-router": "^4.4.5"
+    "vue-i18n": "^10.0.5",
+    "vue-router": "^4.4.5",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.0.3",
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.1.4",
@@ -39,7 +45,7 @@
     "postcss": "^8.4.49",
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.3",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "^4.0.3",
     "typescript": "~5.6.3",
     "vite": "^5.4.10",
     "vite-plugin-pwa": "^0.21.1",

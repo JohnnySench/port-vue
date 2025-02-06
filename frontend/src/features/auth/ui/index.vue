@@ -10,11 +10,11 @@ const currentComponent = computed(() => {
   return props.tab === "up" ? signUp : signIn
 })
 
-type TEmits = {
+interface IEmits {
   (e: "update:auth-tab", tab: "in" | "up"): void
   (e: "update:visible", value: boolean): void
 }
-const emits = defineEmits<TEmits>()
+const emits = defineEmits<IEmits>()
 const changeAuth = () => {
   if (props.tab === "up") {
     emits("update:auth-tab", "in")

@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue"
 import vueJsx from "@vitejs/plugin-vue-jsx"
 import vueDevTools from "vite-plugin-vue-devtools"
 import { VitePWA, type ManifestOptions } from "vite-plugin-pwa"
+import tailwindcss from "@tailwindcss/vite"
 
 // https://vite.dev/config/
 
@@ -38,6 +39,7 @@ const manifest: Partial<ManifestOptions> = {
 export default defineConfig({
   plugins: [
     vue(),
+    tailwindcss(),
     vueJsx(),
     vueDevTools(),
     VitePWA({
@@ -51,6 +53,15 @@ export default defineConfig({
       // },
     }),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
