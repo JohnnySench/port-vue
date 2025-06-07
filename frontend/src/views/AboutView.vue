@@ -16,7 +16,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1>Hello ДЖОН!!!!</h1>
+  <h1>Hello ДЖОН!!!!!!!</h1>
   <PrimeButton severity="success" label="Hello" />
 </template>
 
