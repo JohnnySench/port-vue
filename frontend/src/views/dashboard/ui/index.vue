@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BlyaButton, BlyaInput } from "my-ui-kit"
+// import { BlyaButton, BlyaInput } from "my-ui-kit"
 import { useAuthStore } from "@/entities/auth"
 import { onMounted, inject } from "vue"
 import { keyLogger, keyScopes } from "@/plugins/roles"
@@ -27,12 +27,12 @@ onMounted(() => {
   <!--      <span>Hello3</span>-->
   <!--    </tab>-->
   <!--  </tabs-wrapper>-->
-  <blya-button label="Hello">
-    <template #default="{ msg }">
-      <div>{{ msg }}</div>
-    </template>
-  </blya-button>
-  <blya-input />
+<!--  <blya-button label="Hello">-->
+<!--    <template #default="{ msg }">-->
+<!--      <div>{{ msg }}</div>-->
+<!--    </template>-->
+<!--  </blya-button>-->
+<!--  <blya-input />-->
 </template>
 
 <style scoped></style>

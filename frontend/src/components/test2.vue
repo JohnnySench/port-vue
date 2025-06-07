@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { shallowRef } from 'vue'
-import test1 from './test1.vue'
+import { shallowRef } from "vue"
+import test1 from "./test1.vue"
+
 
 const modelValue = shallowRef(true)
-const value = shallowRef('hello')
+const value = shallowRef("hello")
 </script>
 
 <template>

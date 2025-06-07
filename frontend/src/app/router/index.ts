@@ -60,10 +60,40 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: "/play",
+    name: "play",
+    component: () => import("@/views/play/ui/index.vue"),
+  },
+  {
     path: "/virt",
     name: "virt",
     component: () => import("@/views/virt/ui/index.vue"),
   },
+  {
+    path: "/canvas",
+    name: "canvas",
+    component: () => import("@/views/canvas/ui/index.vue"),
+  },
+  {
+    path: "/float",
+    name: "float",
+    component: () => import("@/views/float/ui/index.vue"),
+  },
+  {
+    path: "/worker",
+    name: "worker",
+    component: () => import("@/views/worker/ui/index.vue"),
+  },
+  {
+    path: "/worker2",
+    name: "worker2",
+    component: () => import("@/views/worker/ui/workerPromise.vue"),
+  },
+  {
+    path: "/shared-worker",
+    name: "shared-worker",
+    component: () => import("@/views/sharedWorker/ui/index.vue"),
+  }
 
   // {
   //   path: "/test",

@@ -9,6 +9,7 @@ import { useAuthStore } from "@/entities/auth"
 import { useForm } from "vee-validate"
 import * as yup from "yup"
 import { computed } from "vue"
+import { storeToRefs } from "pinia"
 
 const { errors, handleSubmit, defineField } = useForm({
   validationSchema: yup.object({
@@ -29,6 +30,7 @@ const isValid = computed(() => {
 })
 
 const { loginUser } = useAuthStore()
+const {accessToken} = storeToRefs(useAuthStore())
 const handleClickLogin = async () => {
   const data = {
     login: username.value,
@@ -36,6 +38,9 @@ const handleClickLogin = async () => {
   }
   try {
     await loginUser(data)
+    const bc = new BroadcastChannel("internal_notification");
+    console.log(accessToken.value, " sign")
+    bc.postMessage(accessToken.value);
   } catch (e) {
     console.error(e)
   }

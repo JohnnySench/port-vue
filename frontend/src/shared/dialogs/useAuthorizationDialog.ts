@@ -1,7 +1,7 @@
 import { useResolvedModal } from "@/shared/hooks/useGlobalModals"
-import { defineAsyncComponent } from "vue"
+import { defineAsyncComponent, type VNode } from "vue"
 
 export const useAuthorizationDialog = async (props: any) => {
   const currentComponent = defineAsyncComponent(() => import("@/features/auth/ui/index.vue"))
-  return await useResolvedModal(currentComponent, props)
+  return await useResolvedModal(currentComponent as VNode[], props)
 }

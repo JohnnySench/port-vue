@@ -1,15 +1,12 @@
 <script setup lang="ts">
-console.log(1)
-console.log(1)
-console.log(1)
-console.log(1)
-import { ref, toRef, markRaw } from "vue"
+import { ref, toRef } from "vue"
+import {SodisButton, SodisText} from "sench-ui-hard"
 const props = defineProps({ value: Boolean })
 const defaultValue = toRef(() => props.value)
 const refChild = ref(defaultValue)
 const refChild2 = ref(props.value)
 
-const modelValue = defineModel()
+const modelValue = defineModel("dasdas")
 </script>
 
 <template>
@@ -18,6 +15,8 @@ const modelValue = defineModel()
   <button @click="refChild = !refChild">CHANGE CHGILD REF</button>
   <div>{{ modelValue }} - modelValue</div>
   <input v-model="modelValue" />
+  <SodisButton text="Hello"/>
+  <SodisText label="Hello World"/>
 </template>
 
 <style scoped></style>

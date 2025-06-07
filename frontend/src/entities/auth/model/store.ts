@@ -12,6 +12,9 @@ export const useAuthStore = defineStore("auth", () => {
     return ROLES_RIGHTS_ROUTES[role.value]
   })
 
+  const setAccessToken = (token: string) => accessToken.value = token
+  const isAuthorized = computed(() => Boolean(accessToken.value))
+
   const loginUser = async (data: TLoginRequest) => {
     try {
       const res = await authLogin(data)
@@ -52,6 +55,8 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   return {
+    setAccessToken,
+    isAuthorized,
     accessToken,
     loginUser,
     logoutUser,
