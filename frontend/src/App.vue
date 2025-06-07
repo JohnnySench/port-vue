@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <nav>
         <RouterLink to="/">Home 3</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">About 1</RouterLink>
       </nav>
     </div>
   </header>
@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 header {
-  line-height: 1.5;
+  line-height: 1.6;
   max-height: 100vh;
 }
 
